@@ -1,0 +1,10 @@
+<h1 class ="current-category"><%= params[:category]%></h1> 
+
+<% if @rent.count == 0 %>
+<h1>There are no rents currently in this category</h1>
+<% else %>
+ <% @rent.each do |rent| %>
+	    <h2><%= link_to rent.location, rent_path(rent) %></h2>
+	<% end %>
+<% end %>
+	

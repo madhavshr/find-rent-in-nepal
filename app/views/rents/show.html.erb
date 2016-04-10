@@ -1,0 +1,15 @@
+<h2>location:<%= @rent.location%></h2>
+<h3>Category:<%= @rent.category.name %></h3>
+<h2>Owner Name:<%= @rent.ownername%></h2>
+<h2>Types:<%= @rent.types%></h2>
+<h2>Contact:<%= @rent.contact%></h2>
+<h2>Price:<%= @rent.price%></h2>
+<h2>Description:<%= @rent.description%></h2>
+
+<%= link_to "Back", root_path %>
+<% if user_signed_in? %>
+<% if @rent.user_id == current_user.id %>
+<%= link_to "Edit", edit_rent_path(@rent) %>
+<%= link_to "Delete", rent_path(@rent),method: :delete, data:{confirm: "Are You Sure?"} %>
+<% end %>
+<% end %>

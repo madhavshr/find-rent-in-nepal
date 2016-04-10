@@ -1,0 +1,10 @@
+<h1>Edit Rent</h1>
+<%= simple_form_for @rent, :html => {:multipart => true } do |f| %>
+<%= f.select :category_id,@categories %>
+  <%= f.input :location %>
+  <%= f.input :ownername %>
+  <%= f.input :contact%>
+  <%= f.input :price %>
+  <%= f.input :description, as: :text %>
+  <%= f.button :submit %>
+<% end %>
